@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 
 export function Header() {
   return (
-    <div className="min-h-20 px-8 flex items-center justify-center gap-10">
+    <div className="min-h-20 px-8 flex items-center justify-between gap-10">
       <div className="flex justify-center items-center gap-4">
         <svg width="43" height="30" viewBox="0 0 43 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="Logomark">
@@ -21,7 +21,7 @@ export function Header() {
           </g>
         </svg>
       </div>
-      <menu>
+      <menu className='inline-flex items-center gap-2'>
         <Button variant="link" asChild>
           <a className="cursor-pointer" >Home</a>
         </Button>
@@ -29,7 +29,9 @@ export function Header() {
           <a className="cursor-pointer">Contact</a>
         </Button>
       </menu>
-      
+      <div className="sm:w-32">
+
+      </div>
     </div>
   )
 }
