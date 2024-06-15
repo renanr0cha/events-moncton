@@ -3,6 +3,7 @@ import { EventCard } from "@/components/Card";
 import { Header } from "@/components/Header";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { juneEvents } from "@/utils/june";
 import { useState } from "react";
 
 interface ButtonOption {
@@ -61,12 +62,14 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col items-center justify-center sm:grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 sm:px-14 px-8 gap-10">
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
+      <section className="flex flex-col items-start justify-center sm:grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 sm:px-14 px-8 gap-10">
+        {
+          juneEvents.map((event) => {
+            return (
+              <EventCard date={event.date} time={event.time} eventType={event.eventType} eventSubType={event.eventSubType} eventInfo={event.eventInfo} venue={event.venue} cost={event.cost} link={event.link}/>
+            )
+          })
+        }
       </section>
       <Pagination className="px-8 py-4">
         <PaginationContent>
